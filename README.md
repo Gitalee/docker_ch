@@ -17,10 +17,7 @@ User Defined bridge network<br />
  Create User Defined bridge :<br />
  docker network create my-app-bridge-net<br />
  Give replace value of name in docker-compose.yml with network name<br />
- networks:<br />
-  default:<br />
-    external:<br />
-      name: my-app-bridge-net<br />
+ name: my-app-bridge-net<br />
  docker-compose up -d .<br />
  docker build -t  flaskimage .<br /> 
  docker run --name flaskapp -it -d --network my-app-bridge-net flaskimage<br />
