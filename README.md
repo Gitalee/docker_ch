@@ -16,7 +16,7 @@ User Defined bridge network<br />
  Command to run :<br />
  Create User Defined bridge :<br />
  docker network create my-app-bridge-net<br />
- Give replace value of name in docker-compose.yml with network name<br
+ Give replace value of name in docker-compose.yml with network name<br />
  networks:<br />
   default:<br />
     external:<br />
@@ -25,3 +25,14 @@ User Defined bridge network<br />
  docker build -t  flaskimage .<br /> 
  docker run --name flaskapp -it -d --network my-app-bridge-net flaskimage<br />
  
+mysql and phpmyadmin<br /> 
+mysql : Contains dockerfile of mysql<br /> 
+Change password in Dockerfile<br /> 
+Build image<br /> 
+docker build -t mysqlimage .<br /> 
+phpmyadmin: Contains dockerfile of phpmyadmin<br /> 
+Build image<br /> 
+docker build -t phpmyadmin_image .<br /> 
+Run command<br /> 
+docker run -it -d --name mysql-server mysqlimage<br /> 
+docker run -it -d --name phpmyadmin-server --link mysql-server:db phpmyadmin_image<br /> 
