@@ -1,0 +1,5 @@
+command to run container with user myuser
+It make entry of user in /etc/passwd file.
+>sudo docker run --name apac --user myuser -it  ubuntu:v1
+myuser@737e68660d37:/$ 
+
